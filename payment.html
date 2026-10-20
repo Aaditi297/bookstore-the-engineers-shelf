@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Payment</title>
+</head>
+<body>
+  <div class="content" style="max-width:680px;">
+    <ol class="steps"><li class="done">Cart</li><li class="done">Delivery</li><li class="active">Payment</li><li>Done</li></ol>
+    <h2>Secure Payment</h2>
+
+    <div id="payGate" class="empty-state" style="display:none;">
+      <div class="empty-icon">💳</div>
+      <h3>Nothing to pay for</h3>
+      <p>Start from your cart, or log in if you haven't yet.</p>
+      <a class="btn" href="cart.html">Go to cart</a>
+      <a class="btn secondary" href="login.html">Log in</a>
+    </div>
+
+    <div id="payBox" class="pay-box card">
+      <div class="pay-amount">
+        <span>Amount payable</span><strong id="payAmount"></strong>
+        <small id="payTo"></small>
+      </div>
+      <p class="demo-note">⚠ Demo gateway — no real money is charged. Use any 16-digit number; a card ending <b>0002</b> is declined to show the failure case.</p>
+
+      <div class="pay-tabs" role="tablist">
+        <button type="button" class="pay-tab" data-tab="card" onclick="selectPayTab('card')">💳 Card</button>
+        <button type="button" class="pay-tab" data-tab="upi" onclick="selectPayTab('upi')">📱 UPI</button>
+        <button type="button" class="pay-tab" data-tab="netbank" onclick="selectPayTab('netbank')">🏦 Net banking</button>
+        <button type="button" class="pay-tab" data-tab="cod" onclick="selectPayTab('cod')">💵 Cash on delivery</button>
+      </div>
+
+      <form class="stack" onsubmit="return payNow(event)" novalidate>
+        <input type="hidden" id="payMethod" value="card">
+
+        <div class="pay-panel" data-panel="card">
+          <label for="pcard">Card number</label>
+          <input type="text" id="pcard" maxlength="19" inputmode="numeric" autocomplete="off" placeholder="1234 5678 9012 3456" oninput="formatCardInput(this)">
+          <label for="pholder">Name on card</label>
+          <input type="text" id="pholder" autocomplete="off">
+          <div class="two-col">
+            <div><label for="pexp">Expiry (MM/YY)</label><input type="text" id="pexp" maxlength="5" placeholder="MM/YY" autocomplete="off"></div>
+            <div><label for="pcvv">CVV</label><input type="password" id="pcvv" maxlength="3" inputmode="numeric" autocomplete="off"></div>
+          </div>
+        </div>
+
+        <div class="pay-panel" data-panel="upi" style="display:none;">
+          <label for="pupi">UPI id</label>
+          <input type="text" id="pupi" placeholder="name@upi" autocomplete="off">
+        </div>
+
+        <div class="pay-panel" data-panel="netbank" style="display:none;">
+          <label for="pbank">Select bank</label>
+          <select id="pbank">
+            <option value="">-- choose --</option>
+            <option>State Bank of India</option><option>HDFC Bank</option><option>ICICI Bank</option>
+            <option>Axis Bank</option><option>Punjab National Bank</option>
+          </select>
+        </div>
+
+        <div class="pay-panel" data-panel="cod" style="display:none;">
+          <p>Pay in cash when your books are delivered.</p>
+        </div>
+
+        <div class="field-error" id="err-pay"></div>
+        <p class="form-actions">
+          <button type="submit" class="btn" id="payBtn">Pay now</button>
+          <a class="btn secondary" href="checkout.html">Back</a>
+        </p>
+      </form>
+    </div>
+
+    <div id="orderConfirm" class="card" style="display:none;"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Catalogue</title>
+</head>
+<body>
+  <div class="content wide">
+    <div class="page-head">
+      <h2 id="catTitle">All books</h2>
+      <span id="catCount" class="muted"></span>
+    </div>
+
+    <div class="toolbar">
+      <label class="search"><span aria-hidden="true">🔍</span>
+        <input id="catSearch" type="search" placeholder="Search title, author or publisher" autocomplete="off">
+      </label>
+      <select id="catSort" aria-label="Sort books">
+        <option value="">Sort: Featured</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="title">Title: A–Z</option>
+      </select>
+      <div class="view-toggle">
+        <button type="button" id="viewGrid" title="Grid view" aria-label="Grid view">▦</button>
+        <button type="button" id="viewList" title="List view" aria-label="List view">☰</button>
+      </div>
+    </div>
+
+    <div class="chips">
+      <a class="chip" data-dept="" href="catalogue.html">All</a>
+      <a class="chip" data-dept="CSE" href="catalogue.html?dept=CSE">CSE</a>
+      <a class="chip" data-dept="ECE" href="catalogue.html?dept=ECE">ECE</a>
+      <a class="chip" data-dept="EEE" href="catalogue.html?dept=EEE">EEE</a>
+      <a class="chip" data-dept="CIVIL" href="catalogue.html?dept=CIVIL">CIVIL</a>
+    </div>
+
+    <div class="book-grid" id="catGrid"></div>
+  </div>
+</body>
+</html>

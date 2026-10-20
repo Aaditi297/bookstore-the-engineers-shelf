@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Checkout</title>
+</head>
+<body>
+  <div class="content wide">
+    <ol class="steps"><li class="done">Cart</li><li class="active">Delivery</li><li>Payment</li><li>Done</li></ol>
+    <h2>Delivery details</h2>
+
+    <div id="checkoutEmpty" class="empty-state" style="display:none;">
+      <div class="empty-icon">🛒</div>
+      <h3>Nothing to check out</h3>
+      <p>Add titles from the catalogue first.</p>
+      <a class="btn" href="catalogue.html">Browse books</a>
+    </div>
+    <div id="loginGate" class="empty-state" style="display:none;">
+      <div class="empty-icon">🔐</div>
+      <h3>Log in to place your order</h3>
+      <p>Your cart is saved — sign in or create an account to continue.</p>
+      <a class="btn" href="login.html">Log in</a>
+      <a class="btn secondary" href="register.html">Register</a>
+    </div>
+
+    <div class="checkout-layout" id="checkoutLayout" style="display:none;">
+      <form class="stack card" id="checkoutForm" onsubmit="return placeOrder(event)" novalidate>
+        <label for="cname">Full name</label>
+        <input type="text" id="cname" autocomplete="name"><div class="field-error" id="err-cname"></div>
+
+        <div class="two-col">
+          <div>
+            <label for="cemail">Email</label>
+            <input type="email" id="cemail" autocomplete="email"><div class="field-error" id="err-cemail"></div>
+          </div>
+          <div>
+            <label for="cphone">Phone</label>
+            <input type="tel" id="cphone" maxlength="10" autocomplete="tel"><div class="field-error" id="err-cphone"></div>
+          </div>
+        </div>
+
+        <label for="caddr">Address</label>
+        <textarea id="caddr" rows="3" autocomplete="street-address"></textarea><div class="field-error" id="err-caddr"></div>
+
+        <div class="two-col">
+          <div>
+            <label for="ccity">City</label>
+            <input type="text" id="ccity" autocomplete="address-level2"><div class="field-error" id="err-ccity"></div>
+          </div>
+          <div>
+            <label for="cpin">PIN code</label>
+            <input type="text" id="cpin" maxlength="6" inputmode="numeric" autocomplete="postal-code"><div class="field-error" id="err-cpin"></div>
+          </div>
+        </div>
+
+        <p class="form-actions">
+          <button type="submit" class="btn">Continue to payment →</button>
+          <a class="btn secondary" href="cart.html">Back to cart</a>
+        </p>
+      </form>
+      <aside class="summary-card" id="orderSummary"></aside>
+    </div>
+  </div>
+</body>
+</html>

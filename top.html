@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body style="margin:0;height:66px;overflow:hidden;">
+  <div class="topbar">
+    <a class="logo" href="home.html" target="mainFrame">📖 The Engineer’s Shelf</a>
+    <nav>
+      <a data-nav href="home.html" target="mainFrame">Home</a>
+      <a data-nav href="catalogue.html" target="mainFrame">Catalogue</a>
+      <a data-nav class="guest-only" href="login.html" target="mainFrame">Login</a>
+      <a data-nav class="guest-only" href="register.html" target="mainFrame">Registration</a>
+    </nav>
+    <div class="top-right">
+      <span id="userArea"></span>
+      <a class="icon-link" data-nav href="wishlist.html" target="mainFrame" title="Wishlist" aria-label="Wishlist">♥<b id="wishBadge" class="badge" hidden>0</b></a>
+      <a class="icon-link" data-nav href="cart.html" target="mainFrame" title="Cart" aria-label="Cart">🛒<b id="cartBadge" class="badge" hidden>0</b></a>
+    </div>
+  </div>
+</body>
+</html>

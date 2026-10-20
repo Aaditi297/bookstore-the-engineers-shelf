@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Your Cart</title>
+</head>
+<body>
+  <div class="content wide">
+    <ol class="steps"><li class="active">Cart</li><li>Delivery</li><li>Payment</li><li>Done</li></ol>
+    <div class="page-head">
+      <h2>Your Cart</h2>
+      <div>
+        <a class="btn secondary" href="catalogue.html">← Continue shopping</a>
+        <button type="button" class="btn clear-btn" id="clearCartBtn" onclick="clearCart()">Clear cart</button>
+      </div>
+    </div>
+
+    <div class="cart-layout" id="cartLayout">
+      <div class="cart-items" id="cartItems"></div>
+      <aside class="summary-card" id="cartSummary"></aside>
+    </div>
+
+    <div id="emptyMsg" class="empty-state" style="display:none;">
+      <div class="empty-icon">🛒</div>
+      <h3>Your cart is empty</h3>
+      <p>Add a few titles from the catalogue to get started.</p>
+      <a class="btn" href="catalogue.html">Browse books</a>
+    </div>
+  </div>
+</body>
+</html>

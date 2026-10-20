@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Login</title>
+</head>
+<body>
+  <div class="content auth">
+    <div class="auth-card card">
+      <div class="auth-head">
+        <span class="auth-icon">📖</span>
+        <h2>Welcome back</h2>
+        <p class="muted">Log in to your Leaflet &amp; Ledger account</p>
+      </div>
+      <form class="stack" onsubmit="return handleLogin(event)">
+        <label for="uname">E-mail (or Name)</label>
+        <input type="text" id="uname" name="uname" autocomplete="username">
+
+        <label for="pwd">Password</label>
+        <input type="password" data-toggle id="pwd" name="pwd" autocomplete="current-password">
+
+        <label class="check-line">
+          <input type="checkbox" id="remember"> Remember me on this device
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn block">Log in</button>
+        </div>
+        <div id="loginMsg" class="field-error"></div>
+      </form>
+      <p class="auth-foot">New here? <a href="register.html">Create an account</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="content auth">
+    <div class="auth-card card wide-card">
+    <div class="auth-head">
+      <span class="auth-icon">✍️</span>
+      <h2>Create your account</h2>
+      <p class="muted">It takes less than a minute.</p>
+    </div>
+    <form class="stack" id="regForm" onsubmit="return validateRegister(event)" novalidate>
+
+      <label for="rname">Name</label>
+      <input type="text" id="rname">
+      <div class="field-error" id="err-rname"></div>
+
+      <label for="rpwd">Password</label>
+      <input type="password" data-toggle id="rpwd">
+      <div class="field-error" id="err-rpwd"></div>
+      <div class="strength" id="pwStrength" data-level="0"><div class="strength-bar"><i></i><i></i><i></i></div><em></em></div>
+
+      <label for="remail">E-mail id</label>
+      <input type="email" id="remail">
+      <div class="field-error" id="err-remail"></div>
+
+      <label for="rphone">Phone Number</label>
+      <input type="tel" id="rphone">
+      <div class="field-error" id="err-rphone"></div>
+
+      <label>Sex</label>
+      <div class="radios">
+        <label><input type="radio" name="sex" value="Female"> Female</label>
+        <label><input type="radio" name="sex" value="Male"> Male</label>
+        <label><input type="radio" name="sex" value="Other"> Other</label>
+      </div>
+
+      <label>Date of birth</label>
+      <div class="inline">
+        <select id="dobDay"></select>
+        <select id="dobMonth">
+          <option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option>
+          <option>May</option><option>Jun</option><option>Jul</option><option>Aug</option>
+          <option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option>
+        </select>
+        <select id="dobYear"></select>
+      </div>
+
+      <label>Languages known</label>
+      <div class="checks">
+        <label><input type="checkbox" value="English"> English</label>
+        <label><input type="checkbox" value="Telugu"> Telugu</label>
+        <label><input type="checkbox" value="Hindi"> Hindi</label>
+        <label><input type="checkbox" value="Tamil"> Tamil</label>
+      </div>
+
+      <label for="raddr">Address</label>
+      <textarea id="raddr" rows="3"></textarea>
+
+      <div style="margin-top:20px;">
+        <button type="submit" class="btn">Submit</button>
+        <button type="reset" class="btn secondary">Reset</button>
+      </div>
+      <div id="regSuccess" class="field-error" style="color:#3E6B4E;"></div>
+    </form>
+    <p class="auth-foot">Already registered? <a href="login.html">Log in</a></p>
+    </div>
+  </div>
+</body>
+</html>

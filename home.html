@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Welcome</title>
+</head>
+<body>
+  <div class="content wide">
+    <section class="hero">
+      <div class="hero-text">
+        <span class="eyebrow">Your campus bookstore</span>
+        <h1>Books for every branch of engineering.</h1>
+        <p>Browse by department, save favourites to your wishlist and check out in a few clicks.</p>
+        <div class="hero-cta">
+          <a class="btn" href="catalogue.html">Browse the catalogue</a>
+          <a class="btn secondary guest-only" href="register.html">Create an account</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="cover cover-lg" style="--c:#6B2438"><span class="cover-title">Introduction to Algorithms</span><span class="cover-author">Cormen</span></div>
+        <div class="cover cover-lg" style="--c:#2E5339"><span class="cover-title">AI</span><span class="cover-author">S. Russel</span></div>
+        <div class="cover cover-lg" style="--c:#3B4A6B"><span class="cover-title">Java 2</span><span class="cover-author">Watson</span></div>
+      </div>
+    </section>
+
+    <section class="perks">
+      <div><span>🚚</span><strong>Free shipping</strong><small>on orders over $100</small></div>
+      <div><span>♥</span><strong>Wishlist</strong><small>save books for later</small></div>
+      <div><span>🔒</span><strong>Easy checkout</strong><small>card, UPI, net banking or COD</small></div>
+    </section>
+
+    <h2>Shop by department</h2>
+    <div class="dept-tiles" id="deptTiles"></div>
+
+    <h2>Featured titles</h2>
+    <div class="book-grid" id="featuredGrid"></div>
+  </div>
+</body>
+</html>
